@@ -11,7 +11,7 @@ composer require kylin987/jd-sp-api-sdk
 ## 目录结构
 
 ```
-lib/
+.
 ├── ApiException.php          # API 异常处理
 ├── Configuration.php         # 配置类
 ├── HeaderSelector.php        # 请求头选择器
