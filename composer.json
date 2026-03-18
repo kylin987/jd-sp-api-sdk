@@ -1,0 +1,42 @@
+{
+    "name": "kylin987/jd-sp-api-sdk",
+    "description": "京东商家开放平台 SP-API PHP SDK",
+    "type": "library",
+    "license": "MIT",
+    "version": "20260318",
+    "authors": [
+        {
+            "name": "kylin987"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JdSpApi\\Open\\Security\\V0\\Api\\": "lib/open/security/v0/api/",
+            "JdSpApi\\Open\\Security\\V0\\Model\\": "lib/open/security/v0/model/",
+            "JdSpApi\\Sp\\Address\\V0\\Api\\": "lib/sp/address/v0/api/",
+            "JdSpApi\\Sp\\Address\\V0\\Model\\": "lib/sp/address/v0/model/",
+            "JdSpApi\\Sp\\Aftercare\\V0\\Api\\": "lib/sp/aftercare/v0/api/",
+            "JdSpApi\\Sp\\Aftercare\\V0\\Model\\": "lib/sp/aftercare/v0/model/",
+            "JdSpApi\\Sp\\C2m\\V0\\Api\\": "lib/sp/c2m/v0/api/",
+            "JdSpApi\\Sp\\C2m\\V0\\Model\\": "lib/sp/c2m/v0/model/",
+            "JdSpApi\\Sp\\Finance\\V0\\Api\\": "lib/sp/finance/v0/api/",
+            "JdSpApi\\Sp\\Finance\\V0\\Model\\": "lib/sp/finance/v0/model/",
+            "JdSpApi\\Sp\\Order\\V0\\Api\\": "lib/sp/order/v0/api/",
+            "JdSpApi\\Sp\\Order\\V0\\Model\\": "lib/sp/order/v0/model/",
+            "JdSpApi\\Sp\\Product\\V0\\Api\\": "lib/sp/product/v0/api/",
+            "JdSpApi\\Sp\\Product\\V0\\Model\\": "lib/sp/product/v0/model/",
+            "JdSpApi\\Sp\\Seller\\V0\\Api\\": "lib/sp/seller/v0/api/",
+            "JdSpApi\\Sp\\Seller\\V0\\Model\\": "lib/sp/seller/v0/model/",
+            "JdSpApi\\Sp\\Support\\V0\\Api\\": "lib/sp/support/v0/api/",
+            "JdSpApi\\Sp\\Support\\V0\\Model\\": "lib/sp/support/v0/model/",
+            "JdSpApi\\": "lib/"
+        }
+    },
+    "keywords": ["jd", "jingdong", "sp-api", "sdk", "php"],
+    "minimum-stability": "stable"
+}
