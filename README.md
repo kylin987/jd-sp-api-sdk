@@ -36,16 +36,24 @@ composer require kylin987/jd-sp-api-sdk
 <?php
 require_once 'vendor/autoload.php';
 
-use JdSpApi\Sp\Order\V0\Api\OrdersApi;
-use JdSpApi\Configuration;
+use com\jd\openapi\apiClient\Configuration;
+use com\jd\openapi\apiClient\sp\product\v0\api\SkusApi;
+use com\jd\openapi\apiClient\sp\product\v0\model\ListSkusRequest;
 
 $config = Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN')
     ->setAppKey('YOUR_APP_KEY')
-    ->setAppSecret('YOUR_APP_SECRET');
+    ->setAppSecret('YOUR_APP_SECRET')
+    ->setAccessToken('YOUR_ACCESS_TOKEN')
+    ->setRequestIdentity('vender'); // 商品域接口需要业务身份头时使用
 
-$ordersApi = new OrdersApi(null, $config);
-$response = $ordersApi->listOrders(...);
+$skusApi = new SkusApi($config);
+$request = new ListSkusRequest([
+    'page' => 1,
+    'page_size' => 10,
+    'scope_set' => ['skuName'],
+]);
+
+$response = $skusApi->listSkus($request);
 ```
 
 ## License

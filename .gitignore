@@ -3,5 +3,6 @@ composer.lock
 *.log
 .DS_Store
 test.php
+jdSpApiDemo.php
 original
 .idea/

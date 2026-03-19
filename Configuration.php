@@ -73,6 +73,13 @@ class Configuration
     protected $appSecret = '';
 
     /**
+     * Request identity for APIs that require a business identity header
+     *
+     * @var string
+     */
+    protected $requestIdentity = '';
+
+    /**
      * Boolean format for query string
      *
      * @var string
@@ -255,6 +262,29 @@ class Configuration
     public function setAppSecret($appSecret)
     {
         $this->appSecret = $appSecret;
+        return $this;
+    }
+
+    /**
+     * Gets the request identity header value.
+     *
+     * @return string request identity
+     */
+    public function getRequestIdentity()
+    {
+        return $this->requestIdentity;
+    }
+
+    /**
+     * Sets the request identity header value.
+     *
+     * @param string $requestIdentity request identity
+     *
+     * @return $this
+     */
+    public function setRequestIdentity($requestIdentity)
+    {
+        $this->requestIdentity = $requestIdentity;
         return $this;
     }
 

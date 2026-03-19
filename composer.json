@@ -3,7 +3,7 @@
     "description": "京东商家开放平台 SP-API PHP SDK",
     "type": "library",
     "license": "MIT",
-    "version": "2.1.0",
+    "version": "4.0.0",
     "authors": [
         {
             "name": "kylin987"

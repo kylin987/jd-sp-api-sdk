@@ -407,6 +407,9 @@ class CompensationFormsApi
         $headerParams["X-JOS-App-Key"] = $this->config->getAppKey();
         $headerParams["X-JOS-Access-Token"] = $this->config->getAccessToken();
         $headerParams["X-JOS-Sdk-Version"] = "php-v2";
+        if ($this->config->getRequestIdentity() !== "") {
+            $headerParams["X-JOS-Request-Identity"] = $this->config->getRequestIdentity();
+        }
 
         $headers = array_merge(
             $defaultHeaders,

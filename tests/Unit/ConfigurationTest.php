@@ -25,10 +25,12 @@ final class ConfigurationTest extends TestCase
         $config
             ->setAppKey('app-key')
             ->setAppSecret('app-secret')
-            ->setAccessToken('access-token');
+            ->setAccessToken('access-token')
+            ->setRequestIdentity('vender');
 
         $this->assertSame('app-key', $config->getAppKey());
         $this->assertSame('app-secret', $config->getAppSecret());
         $this->assertSame('access-token', $config->getAccessToken());
+        $this->assertSame('vender', $config->getRequestIdentity());
     }
 }

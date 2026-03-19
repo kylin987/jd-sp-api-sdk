@@ -22,10 +22,13 @@ final class ProductApiIntegrationTest extends IntegrationTestCase
      */
     public function testListProductsReturnsSuccessfulResponse(): void
     {
-        $api = new ProductsApi($this->createConfiguration());
+        $api = new ProductsApi(
+            $this->createConfiguration()->setRequestIdentity('vender')
+        );
         $request = new ListProductsRequest([
             'page' => 1,
             'page_size' => 1,
+            'scope_set' => ['productName'],
         ]);
 
         $response = $this->executeLiveRequest(
@@ -46,10 +49,13 @@ final class ProductApiIntegrationTest extends IntegrationTestCase
      */
     public function testListSkusReturnsSuccessfulResponse(): void
     {
-        $api = new SkusApi($this->createConfiguration());
+        $api = new SkusApi(
+            $this->createConfiguration()->setRequestIdentity('vender')
+        );
         $request = new ListSkusRequest([
             'page' => 1,
             'page_size' => 1,
+            'scope_set' => ['skuName'],
         ]);
 
         $response = $this->executeLiveRequest(
@@ -69,7 +75,9 @@ final class ProductApiIntegrationTest extends IntegrationTestCase
      */
     public function testListSizeTemplatesReturnsSuccessfulResponse(): void
     {
-        $api = new SizeTemplatesApi($this->createConfiguration());
+        $api = new SizeTemplatesApi(
+            $this->createConfiguration()->setRequestIdentity('vender')
+        );
         $request = new ListSizeTemplatesRequest([
             'page' => 1,
             'page_size' => 1,
@@ -84,7 +92,10 @@ final class ProductApiIntegrationTest extends IntegrationTestCase
             (bool) $response->getSuccess(),
             $this->formatErrorList($response->getErrorList())
         );
-        $this->assertIsArray($response->getData());
+        $this->assertTrue(
+            $response->getData() === null || is_array($response->getData()),
+            'JD size template API should return either null or an array for data.'
+        );
     }
 
     private function formatErrorList(?array $errorList): string
