@@ -14,6 +14,9 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
     "autoload": {
         "psr-4": {
             "com\\jd\\openapi\\apiClient\\": "",
@@ -36,6 +39,14 @@
             "com\\jd\\openapi\\apiClient\\sp\\support\\v0\\api\\": "sp/support/v0/api/",
             "com\\jd\\openapi\\apiClient\\sp\\support\\v0\\model\\": "sp/support/v0/model/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JdSpApiSdk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     },
     "keywords": ["jd", "jingdong", "sp-api", "sdk", "php"],
     "minimum-stability": "stable"

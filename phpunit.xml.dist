@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    cacheResult="false"
+>
+    <testsuites>
+        <testsuite name="JD SP-API SDK">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <exclude>
+            <group>live</group>
+        </exclude>
+    </groups>
+</phpunit>
